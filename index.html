@@ -1,484 +1,514 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDG 16: Peace, Justice & Strong Institutions</title>
+    <title>Juba Business Hub - Empowering Small Businesses in South Sudan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased">
+<body class="bg-juba-dark text-gray-100 font-sans overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00689D] to-[#4C9F38] flex items-center justify-center font-bold text-xl">16</div>
-                <span class="display-font font-bold text-xl tracking-tight">SDG 16</span>
+    <nav class="fixed w-full z-50 glass-effect border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-seedling text-juba-gold text-2xl"></i>
+                    <span class="font-display font-bold text-xl tracking-tight">Juba Business <span class="text-juba-gold">Hub</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-juba-gold transition-colors">Home</a>
+                    <a href="#challenges" class="hover:text-juba-gold transition-colors">Challenges</a>
+                    <a href="#solutions" class="hover:text-juba-gold transition-colors">Solutions</a>
+                    <a href="#resources" class="hover:text-juba-gold transition-colors">Resources</a>
+                    <a href="#community" class="hover:text-juba-gold transition-colors">Community</a>
+                    <a href="#about" class="hover:text-juba-gold transition-colors">About Us</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#problems" class="hover:text-[#4C9F38] transition-colors">Problems</a>
-                <a href="#solutions" class="hover:text-[#4C9F38] transition-colors">Solutions</a>
-                <a href="#impact" class="hover:text-[#4C9F38] transition-colors">Impact</a>
-                <a href="#action" class="hover:text-[#4C9F38] transition-colors">Take Action</a>
+        </div>        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-effect border-t border-gray-800">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block py-2 hover:text-juba-gold">Home</a>
+                <a href="#challenges" class="block py-2 hover:text-juba-gold">Challenges</a>
+                <a href="#solutions" class="block py-2 hover:text-juba-gold">Solutions</a>
+                <a href="#resources" class="block py-2 hover:text-juba-gold">Resources</a>
+                <a href="#community" class="block py-2 hover:text-juba-gold">Community</a>
+                <a href="#about" class="block py-2 hover:text-juba-gold">About Us</a>
             </div>
-            <button onclick="scrollToSection('action')" class="px-6 py-2 bg-gradient-to-r from-[#00689D] to-[#4C9F38] rounded-full font-medium hover:shadow-lg hover:shadow-[#00689D]/30 transition-all transform hover:scale-105">
-                Get Involved
-            </button>
         </div>
     </nav>
-
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center justify-center relative grid-pattern pt-20">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00689D]/20 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#4C9F38]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-juba-dark via-juba-green/20 to-juba-dark"></div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-juba-gold/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-juba-green/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
         </div>
         
-        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 hero-badge opacity-0">
-                <i data-lucide="globe" class="w-4 h-4 text-[#4C9F38]"></i>
-                <span class="text-sm font-medium">South Sudan</span>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-juba-gold/30 bg-juba-gold/10 text-juba-gold text-sm font-medium animate-pulse-slow">
+                <i class="fas fa-map-marker-alt mr-2"></i>Serving Juba, South Sudan
             </div>
-            
-            <h1 class="display-font text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight hero-title opacity-0">
-                Peace, Justice &<br>
-                <span class="gradient-text">Strong Institutions</span>
+            <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Building <span class="gradient-text">Resilient</span> Businesses<br>
+                Against All Odds
             </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 hero-subtitle opacity-0">
-                Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable institutions.
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+                Practical solutions to the unique challenges facing small businesses in Juba: 
+                inflation, taxation, infrastructure gaps, and access to capital.
             </p>
-            
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center hero-cta opacity-0">
-                <button onclick="scrollToSection('problems')" class="group px-8 py-4 bg-white text-black rounded-full font-semibold flex items-center gap-2 hover:bg-gray-200 transition-all">
-                    Explore Challenges
-                    <i data-lucide="arrow-down" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="exploreSolutions()" class="px-8 py-4 bg-juba-gold text-juba-dark font-bold rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-lg shadow-juba-gold/20">
+                    <i class="fas fa-rocket mr-2"></i>Explore Solutions
                 </button>
-                <button onclick="scrollToSection('solutions')" class="px-8 py-4 border border-white/30 rounded-full font-semibold hover:bg-white/10 transition-all">
-                    View Solutions
+                <button onclick="viewChallenges()" class="px-8 py-4 border border-gray-600 rounded-lg hover:border-juba-gold hover:text-juba-gold transition-all">
+                    <i class="fas fa-chart-line mr-2"></i>View Challenges
                 </button>
             </div>
             
-            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto hero-stats opacity-0">
+            <!-- Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                 <div class="text-center">
-                    <div class="stat-counter text-4xl font-bold text-[#00689D]" data-target="100">0</div>
-                    <div class="text-sm text-gray-500 mt-2">Countries Affected</div>
+                    <div class="text-3xl font-bold text-juba-gold">45%</div>
+                    <div class="text-sm text-gray-500 mt-1">Business Failure Rate</div>
                 </div>
                 <div class="text-center">
-                    <div class="stat-counter text-4xl font-bold text-[#4C9F38]" data-target="79.5">0</div>
-                    <div class="text-sm text-gray-500 mt-2">Million Displaced</div>
+                    <div class="text-3xl font-bold text-juba-gold">80%</div>
+                    <div class="text-sm text-gray-500 mt-1">Informal Sector</div>
                 </div>
                 <div class="text-center">
-                    <div class="stat-counter text-4xl font-bold text-[#00689D]" data-target="25">0</div>
-                    <div class="text-sm text-gray-500 mt-2">% Corruption Perception</div>
+                    <div class="text-3xl font-bold text-juba-gold">60%</div>
+                    <div class="text-sm text-gray-500 mt-1">Currency Devaluation</div>
                 </div>
                 <div class="text-center">
-                    <div class="stat-counter text-4xl font-bold text-[#4C9F38]" data-target="4.5">0</div>
-                    <div class="text-sm text-gray-500 mt-2">Billion Lack Justice</div>
+                    <div class="text-3xl font-bold text-juba-gold">30%</div>
+                    <div class="text-sm text-gray-500 mt-1">Women's Literacy</div>
                 </div>
             </div>
-        </div>
-        
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator">
-            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500"></i>
         </div>
     </section>
 
-    <!-- Problems Section -->
-    <section id="problems" class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-20 text-center section-header">
-                <h2 class="display-font text-4xl md:text-5xl font-bold mb-6">Critical Challenges</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Understanding the multifaceted threats to peace, justice, and institutional integrity worldwide.
-                </p>
+    <!-- Challenges Section -->
+    <section id="challenges" class="py-20 bg-gray-900/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold mb-4">Critical Challenges in <span class="text-juba-gold">Juba</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Based on recent research and local entrepreneur testimonies, these are the primary obstacles facing small businesses today.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Problem Card 1 -->
-                <div class="problem-card rounded-2xl p-8 cursor-pointer group" onclick="toggleDetails(this)">
-                    <div class="w-14 h-14 rounded-xl bg-red-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="shield-alert" class="w-7 h-7 text-red-400"></i>
+                <!-- Challenge 1 -->
+                <div class="problem-card bg-gray-800/50 p-6 rounded-xl border border-gray-700 cursor-pointer" onclick="showSolution('inflation')">
+                    <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line-down text-red-400 text-xl"></i>
                     </div>
-                    <h3 class="display-font text-2xl font-bold mb-3">Violence & Conflict</h3>
-                    <p class="text-gray-400 mb-4">Armed conflicts, terrorism, and high rates of violent crime destabilize communities and hinder development.</p>
-                    <div class="solution-tag rounded-lg px-4 py-3 text-sm inline-flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        <span>Early Warning Systems</span>
-                    </div>
-                    <div class="hidden-details mt-4 pt-4 border-t border-white/10 hidden">
-                        <p class="text-sm text-gray-300">Implementation of AI-driven conflict prediction models and community mediation programs has reduced violence by 40% in pilot regions.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2">Hyperinflation & Currency Volatility</h3>
+                    <p class="text-gray-400 text-sm mb-4">SSP lost 60% of value since 2020. Prices change daily, wiping out savings and making pricing impossible.</p>
+                    <span class="text-juba-gold text-sm font-medium flex items-center">
+                        View Solution <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
                 </div>
-                
-                <!-- Problem Card 2 -->
-                <div class="problem-card rounded-2xl p-8 cursor-pointer group" onclick="toggleDetails(this)">
-                    <div class="w-14 h-14 rounded-xl bg-orange-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="scale" class="w-7 h-7 text-orange-400"></i>
+
+                <!-- Challenge 2 -->
+                <div class="problem-card bg-gray-800/50 p-6 rounded-xl border border-gray-700 cursor-pointer" onclick="showSolution('taxation')">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-invoice-dollar text-orange-400 text-xl"></i>
                     </div>
-                    <h3 class="display-font text-2xl font-bold mb-3">Access to Justice</h3>
-                    <p class="text-gray-400 mb-4">4.5 billion people lack meaningful access to justice, facing barriers of cost, distance, and complexity.</p>
-                    <div class="solution-tag rounded-lg px-4 py-3 text-sm inline-flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        <span>Legal Tech & AI</span>
-                    </div>
-                    <div class="hidden-details mt-4 pt-4 border-t border-white/10 hidden">
-                        <p class="text-sm text-gray-300">Mobile justice units and AI-powered legal aid platforms have provided free consultation to 2M+ underserved individuals.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2">Multiple Taxation</h3>
+                    <p class="text-gray-400 text-sm mb-4">Businesses taxed by City Council, CID, state and national agencies simultaneously without unified system.</p>
+                    <span class="text-juba-gold text-sm font-medium flex items-center">
+                        View Solution <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
                 </div>
-                
-                <!-- Problem Card 3 -->
-                <div class="problem-card rounded-2xl p-8 cursor-pointer group" onclick="toggleDetails(this)">
-                    <div class="w-14 h-14 rounded-xl bg-yellow-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="users" class="w-7 h-7 text-yellow-400"></i>
+
+                <!-- Challenge 3 -->
+                <div class="problem-card bg-gray-800/50 p-6 rounded-xl border border-gray-700 cursor-pointer" onclick="showSolution('finance')">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-university text-blue-400 text-xl"></i>
                     </div>
-                    <h3 class="display-font text-2xl font-bold mb-3">Corruption</h3>
-                    <p class="text-gray-400 mb-4">Illicit financial flows, bribery, and theft drain $2.6 trillion annually from global development.</p>
-                    <div class="solution-tag rounded-lg px-4 py-3 text-sm inline-flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        <span>Blockchain Transparency</span>
-                    </div>
-                    <div class="hidden-details mt-4 pt-4 border-t border-white/10 hidden">
-                        <p class="text-sm text-gray-300">Blockchain-based public procurement systems have increased transparency by 85% and reduced procurement fraud by 60%.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2">Limited Access to Finance</h3>
+                    <p class="text-gray-400 text-sm mb-4">Only 30 registered banks operate nationwide, mostly in Juba. No international transfers possible.</p>
+                    <span class="text-juba-gold text-sm font-medium flex items-center">
+                        View Solution <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
                 </div>
-                
-                <!-- Problem Card 4 -->
-                <div class="problem-card rounded-2xl p-8 cursor-pointer group" onclick="toggleDetails(this)">
-                    <div class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="file-lock" class="w-7 h-7 text-purple-400"></i>
+
+                <!-- Challenge 4 -->
+                <div class="problem-card bg-gray-800/50 p-6 rounded-xl border border-gray-700 cursor-pointer" onclick="showSolution('infrastructure')">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-purple-400 text-xl"></i>
                     </div>
-                    <h3 class="display-font text-2xl font-bold mb-3">Human Rights Violations</h3>
-                    <p class="text-gray-400 mb-4">Arbitrary detention, torture, and discrimination persist despite international frameworks.</p>
-                    <div class="solution-tag rounded-lg px-4 py-3 text-sm inline-flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        <span>Digital Monitoring</span>
-                    </div>
-                    <div class="hidden-details mt-4 pt-4 border-t border-white/10 hidden">
-                        <p class="text-sm text-gray-300">Satellite monitoring and secure reporting apps have documented 10,000+ violations, leading to 200+ successful prosecutions.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2">Poor Infrastructure</h3>
+                    <p class="text-gray-400 text-sm mb-4">Unreliable electricity, limited internet, poor transport routes, and lack of storage facilities.</p>
+                    <span class="text-juba-gold text-sm font-medium flex items-center">
+                        View Solution <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
                 </div>
-                
-                <!-- Problem Card 5 -->
-                <div class="problem-card rounded-2xl p-8 cursor-pointer group" onclick="toggleDetails(this)">
-                    <div class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="building-2" class="w-7 h-7 text-blue-400"></i>
+
+                <!-- Challenge 5 -->
+                <div class="problem-card bg-gray-800/50 p-6 rounded-xl border border-gray-700 cursor-pointer" onclick="showSolution('security')">
+                    <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-red-500 text-xl"></i>
                     </div>
-                    <h3 class="display-font text-2xl font-bold mb-3">Weak Institutions</h3>
-                    <p class="text-gray-400 mb-4">Lack of capacity, resources, and independence undermines governance effectiveness.</p>
-                    <div class="solution-tag rounded-lg px-4 py-3 text-sm inline-flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        <span>Capacity Building</span>
-                    </div>
-                    <div class="hidden-details mt-4 pt-4 border-t border-white/10 hidden">
-                        <p class="text-sm text-gray-300">E-governance platforms and civil service training programs have improved service delivery speed by 300% in 15 countries.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2">Insecurity & Theft</h3>
+                    <p class="text-gray-400 text-sm mb-4">Armed roadblocks, theft of goods and harvests, property rights violations, and arbitrary fees.</p>
+                    <span class="text-juba-gold text-sm font-medium flex items-center">
+                        View Solution <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
                 </div>
-                
-                <!-- Problem Card 6 -->
-                <div class="problem-card rounded-2xl p-8 cursor-pointer group" onclick="toggleDetails(this)">
-                    <div class="w-14 h-14 rounded-xl bg-pink-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="radio" class="w-7 h-7 text-pink-400"></i>
+
+                <!-- Challenge 6 -->
+                <div class="problem-card bg-gray-800/50 p-6 rounded-xl border border-gray-700 cursor-pointer" onclick="showSolution('skills')">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-green-400 text-xl"></i>
                     </div>
-                    <h3 class="display-font text-2xl font-bold mb-3">Information Restrictions</h3>
-                    <p class="text-gray-400 mb-4">Attacks on journalists, internet shutdowns, and disinformation campaigns threaten informed societies.</p>
-                    <div class="solution-tag rounded-lg px-4 py-3 text-sm inline-flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4"></i>
-                        <span>Media Freedom</span>
-                    </div>
-                    <div class="hidden-details mt-4 pt-4 border-t border-white/10 hidden">
-                        <p class="text-sm text-gray-300">Decentralized news verification networks and journalist safety protocols have reduced attacks on media by 45%.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold mb-2">Lack of Business Skills</h3>
+                    <p class="text-gray-400 text-sm mb-4">Poor financial management, lack of digital literacy, and limited access to training programs.</p>
+                    <span class="text-juba-gold text-sm font-medium flex items-center">
+                        View Solution <i class="fas fa-arrow-right ml-2"></i>
+                    </span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Solutions Dashboard -->
-    <section id="solutions" class="py-32 bg-[#0f0f0f] relative overflow-hidden">
-        <div class="absolute inset-0 grid-pattern opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="display-font text-4xl md:text-5xl font-bold mb-6">Innovative Solutions</h2>
-                    <p class="text-gray-400 text-lg mb-8">
-                        Technology-driven approaches to building resilient institutions and inclusive justice systems.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <div class="solution-item p-6 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/10 transition-all" onclick="highlightSolution(0)">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-[#00689D]/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="brain" class="w-6 h-6 text-[#00689D]"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-1">AI-Powered Conflict Prevention</h4>
-                                    <p class="text-sm text-gray-400">Machine learning algorithms analyze social media, economic indicators, and historical data to predict conflicts 6 months in advance.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="solution-item p-6 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/10 transition-all" onclick="highlightSolution(1)">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-[#4C9F38]/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="smartphone" class="w-6 h-6 text-[#4C9F38]"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-1">Mobile Justice Platforms</h4>
-                                    <p class="text-sm text-gray-400">Blockchain-based case management and video conferencing bring courts to remote areas, reducing case backlog by 70%.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="solution-item p-6 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/10 transition-all" onclick="highlightSolution(2)">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-[#00689D]/20 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="link" class="w-6 h-6 text-[#00689D]"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-1">Transparent Governance</h4>
-                                    <p class="text-sm text-gray-400">Distributed ledger technology for public procurement and budget tracking, ensuring every dollar is traceable.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="aspect-square rounded-3xl bg-gradient-to-br from-[#00689D]/20 to-[#4C9F38]/20 p-8 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 grid-pattern opacity-30"></div>
-                        
-                        <!-- Interactive Visualization -->
-                        <div class="relative w-full h-full flex items-center justify-center">
-                            <div class="absolute w-64 h-64 border border-[#00689D]/30 rounded-full animate-spin-slow" style="animation-duration: 20s;"></div>
-                            <div class="absolute w-48 h-48 border border-[#4C9F38]/30 rounded-full animate-spin-slow" style="animation-duration: 15s; animation-direction: reverse;"></div>
-                            <div class="absolute w-32 h-32 border border-white/20 rounded-full"></div>
-                            
-                            <div class="relative z-10 text-center">
-                                <div class="text-6xl font-bold gradient-text mb-2" id="solution-stat">85%</div>
-                                <div class="text-sm text-gray-400" id="solution-label">Reduction in Corruption</div>
-                            </div>
-                            
-                            <!-- Orbiting Icons -->
-                            <div class="absolute inset-0 solution-orbit" data-index="0">
-                                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#00689D] rounded-full flex items-center justify-center shadow-lg shadow-[#00689D]/50">
-                                    <i data-lucide="brain" class="w-6 h-6 text-white"></i>
-                                </div>
-                            </div>
-                            <div class="absolute inset-0 solution-orbit hidden" data-index="1">
-                                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#4C9F38] rounded-full flex items-center justify-center shadow-lg shadow-[#4C9F38]/50">
-                                    <i data-lucide="smartphone" class="w-6 h-6 text-white"></i>
-                                </div>
-                            </div>
-                            <div class="absolute inset-0 solution-orbit hidden" data-index="2">
-                                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#00689D] rounded-full flex items-center justify-center shadow-lg shadow-[#00689D]/50">
-                                    <i data-lucide="link" class="w-6 h-6 text-white"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Interactive Solutions Section -->
+    <section id="solutions" class="py-20 bg-juba-dark relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold mb-4">Implementation <span class="text-juba-gold">Solutions</span></h2>
+                <p class="text-gray-400">Click on any challenge above or select below to see step-by-step solutions with code/resources.</p>
+            </div>
+
+            <!-- Solution Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8 border-b border-gray-800 pb-4">
+                <button onclick="showSolution('inflation')" id="tab-inflation" class="solution-tab px-4 py-2 text-sm font-medium hover:text-juba-gold transition-colors">Currency Protection</button>
+                <button onclick="showSolution('taxation')" id="tab-taxation" class="solution-tab px-4 py-2 text-sm font-medium hover:text-juba-gold transition-colors">Tax Compliance</button>
+                <button onclick="showSolution('finance')" id="tab-finance" class="solution-tab px-4 py-2 text-sm font-medium hover:text-juba-gold transition-colors">Alternative Finance</button>
+                <button onclick="showSolution('infrastructure')" id="tab-infrastructure" class="solution-tab px-4 py-2 text-sm font-medium hover:text-juba-gold transition-colors">Digital Tools</button>
+                <button onclick="showSolution('security')" id="tab-security" class="solution-tab px-4 py-2 text-sm font-medium hover:text-juba-gold transition-colors">Risk Management</button>
+                <button onclick="showLoginModal()" id="tab-skills" class="solution-tab px-4 py-2 text-sm font-medium hover:text-juba-gold transition-colors">Training</button>
+            </div>
+
+            <!-- Solution Content Area -->
+            <div id="solution-content" class="bg-gray-900 rounded-2xl p-8 border border-gray-800 min-h-[600px]">
+                <!-- Default Content -->
+                <div class="text-center py-20">
+                    <i class="fas fa-hand-pointer text-6xl text-gray-700 mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-gray-500">Select a challenge to view solutions</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Metrics -->
-    <section id="impact" class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="display-font text-4xl md:text-5xl font-bold mb-6">Global Impact</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Measurable progress toward peaceful and just societies.</p>
-            </div>
+    <!-- Resources & Tools Section -->
+    <section id="resources" class="py-20 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">Essential <span class="text-juba-gold">Resources</span></h2>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass-card rounded-2xl p-8 text-center hover:border-[#00689D]/50 transition-colors">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#00689D]/20 flex items-center justify-center">
-                        <i data-lucide="trending-down" class="w-8 h-8 text-[#00689D]"></i>
+                <!-- Financial Tools -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-calculator text-green-400"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold">Pricing Calculator</h3>
                     </div>
-                    <div class="text-5xl font-bold mb-2 text-white">-23%</div>
-                    <div class="text-gray-400">Homicide Rates Globally</div>
-                    <div class="mt-4 text-sm text-[#4C9F38]">Since 2015</div>
+                    <p class="text-gray-400 text-sm mb-4">Adjust prices daily based on exchange rates to maintain profit margins.</p>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="text-xs text-gray-500">Cost in USD</label>
+                            <input type="number" id="cost-usd" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm" placeholder="Enter cost">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-500">Exchange Rate (SSP/USD)</label>
+                            <input type="number" id="exchange-rate" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm" placeholder="1300">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-500">Margin %</label>
+                            <input type="number" id="margin" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm" placeholder="30">
+                        </div>
+                        <button onclick="calculatePrice()" class="w-full bg-juba-gold text-juba-dark font-bold py-2 rounded hover:bg-yellow-400 transition-colors">
+                            Calculate SSP Price
+                        </button>
+                        <div id="price-result" class="text-center text-2xl font-bold text-green-400 hidden"></div>
+                    </div>
                 </div>
-                
-                <div class="glass-card rounded-2xl p-8 text-center hover:border-[#4C9F38]/50 transition-colors">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#4C9F38]/20 flex items-center justify-center">
-                        <i data-lucide="gavel" class="w-8 h-8 text-[#4C9F38]"></i>
+
+                <!-- Business Plan Template -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-file-alt text-blue-400"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold">One-Page Business Plan</h3>
                     </div>
-                    <div class="text-5xl font-bold mb-2 text-white">140+</div>
-                    <div class="text-gray-400">Countries with National Human Rights Institutions</div>
-                    <div class="mt-4 text-sm text-[#4C9F38]">Paris Principles Compliant</div>
+                    <p class="text-gray-400 text-sm mb-4">Simplified template designed for Juba's volatile market conditions.</p>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-2 mt-1"></i>Problem/Solution fit</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-2 mt-1"></i>Revenue streams (USD + SSP)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-2 mt-1"></i>Risk mitigation strategies</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-2 mt-1"></i>Local partnership map</li>
+                    </ul>
+                    <button onclick="downloadTemplate()" class="w-full border border-juba-gold text-juba-gold py-2 rounded hover:bg-juba-gold hover:text-juba-dark transition-colors">
+                        <i class="fas fa-download mr-2"></i>Download Template
+                    </button>
                 </div>
-                
-                <div class="glass-card rounded-2xl p-8 text-center hover:border-[#00689D]/50 transition-colors">
-                    <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#00689D]/20 flex items-center justify-center">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-[#00689D]"></i>
+
+                <!-- Digital Presence -->
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-mobile-alt text-purple-400"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold">Social Media Setup</h3>
                     </div>
-                    <div class="text-5xl font-bold mb-2 text-white">$2B</div>
-                    <div class="text-gray-400">Saved via Anti-Corruption Tech</div>
-                    <div class="mt-4 text-sm text-[#4C9F38]">Recovered Assets</div>
+                    <p class="text-gray-400 text-sm mb-4">Low-data marketing strategies for Facebook/WhatsApp Business.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                            <span class="text-sm">WhatsApp Business</span>
+                            <span class="text-xs text-green-400">Essential</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                            <span class="text-sm">Facebook Page</span>
+                            <span class="text-xs text-green-400">High Reach</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gray-900 rounded-lg">
+                            <span class="text-sm">Juba Market Groups</span>
+                            <span class="text-xs text-yellow-400">Network</span>
+                        </div>
+                    </div>
+                    <button onclick="showSocialGuide()" class="w-full mt-4 bg-gray-700 hover:bg-gray-600 py-2 rounded text-sm transition-colors">
+                        View Setup Guide
+                    </button>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-20 bg-juba-green/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">Local <span class="text-juba-gold">Success Stories</span></h2>
             
-            <!-- Progress Bars -->
-            <div class="mt-20 space-y-8 max-w-3xl mx-auto">
-                <div>
-                    <div class="flex justify-between mb-2">
-                        <span class="font-medium">Access to Justice</span>
-                        <span class="text-[#4C9F38]">67%</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-yellow-600/20 to-yellow-900/20 flex items-center justify-center">
+                        <i class="fas fa-hive text-6xl text-yellow-600/40"></i>
                     </div>
-                    <div class="h-3 bg-white/10 rounded-full overflow-hidden">
-                        <div class="progress-bar h-full rounded-full" style="width: 67%"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="flex justify-between mb-2">
-                        <span class="font-medium">Institutional Effectiveness</span>
-                        <span class="text-[#4C9F38]">54%</span>
-                    </div>
-                    <div class="h-3 bg-white/10 rounded-full overflow-hidden">
-                        <div class="progress-bar h-full rounded-full" style="width: 54%"></div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold mb-2">Pure Organic Honey</h3>
+                        <p class="text-juba-gold text-sm mb-3">June Owdo Joseph Ojukwu</p>
+                        <p class="text-gray-400 text-sm mb-4">Overcame transport roadblocks by diversifying supplier networks across 3 states and training farmers to negotiate checkpoint fees.</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <i class="fas fa-users mr-2"></i> 10 employees, mostly women
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="flex justify-between mb-2">
-                        <span class="font-medium">Corruption Control</span>
-                        <span class="text-[#4C9F38]">43%</span>
+
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-blue-600/20 to-blue-900/20 flex items-center justify-center">
+                        <i class="fas fa-book text-6xl text-blue-600/40"></i>
                     </div>
-                    <div class="h-3 bg-white/10 rounded-full overflow-hidden">
-                        <div class="progress-bar h-full rounded-full" style="width: 43%"></div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold mb-2">Junub Kids</h3>
+                        <p class="text-juba-gold text-sm mb-3">Duom Peter Chol</p>
+                        <p class="text-gray-400 text-sm mb-4">Bypassed expensive local printing by partnering with Uganda printers, uses Facebook for direct school sales.</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <i class="fas fa-school mr-2"></i> 200+ schools reached
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700">
+                    <div class="h-48 bg-gradient-to-br from-pink-600/20 to-pink-900/20 flex items-center justify-center">
+                        <i class="fas fa-female text-6xl text-pink-600/40"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-bold mb-2">Yommie Co.</h3>
+                        <p class="text-juba-gold text-sm mb-3">Ajah Jennifer Mayen</p>
+                        <p class="text-gray-400 text-sm mb-4">Localizing sanitary product manufacturing to control costs and quality despite inflation shocks.</p>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <i class="fas fa-heart mr-2"></i> Menstrual health advocacy
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies -->
-    <section class="py-32 bg-[#0f0f0f]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="display-font text-4xl md:text-5xl font-bold mb-16 text-center">Success Stories</h2>
+    <!-- Community & Support -->
+    <section id="community" class="py-20 bg-gray-900/50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-display text-4xl font-bold mb-8">Join the <span class="text-juba-gold">Community</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">Connect with other Juba entrepreneurs, share resources, and access mentorship programs.</p>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="testimonial-card rounded-2xl p-8 border border-white/10">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#00689D] flex items-center justify-center font-bold">CO</div>
-                        <div>
-                            <div class="font-bold">Colombia</div>
-                            <div class="text-sm text-gray-500">Transitional Justice</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-6">"The Special Jurisdiction for Peace (JEP) has processed 13,000+ cases of war crimes, achieving a 94% compliance rate with the peace agreement."</p>
-                    <div class="flex gap-4 text-sm">
-                        <span class="px-3 py-1 rounded-full bg-[#4C9F38]/20 text-[#4C9F38]">Truth Commission</span>
-                        <span class="px-3 py-1 rounded-full bg-[#00689D]/20 text-[#00689D]">Victim Reparation</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card rounded-2xl p-8 border border-white/10">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#4C9F38] flex items-center justify-center font-bold">EE</div>
-                        <div>
-                            <div class="font-bold">Estonia</div>
-                            <div class="text-sm text-gray-500">Digital Governance</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-6">"99% of government services are available online 24/7, with blockchain-secured voting and zero bureaucracy for 1.3M citizens."</p>
-                    <div class="flex gap-4 text-sm">
-                        <span class="px-3 py-1 rounded-full bg-[#4C9F38]/20 text-[#4C9F38]">e-Residency</span>
-                        <span class="px-3 py-1 rounded-full bg-[#00689D]/20 text-[#00689D]">Cybersecurity</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card rounded-2xl p-8 border border-white/10">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#00689D] flex items-center justify-center font-bold">RW</div>
-                        <div>
-                            <div class="font-bold">Rwanda</div>
-                            <div class="text-sm text-gray-500">Gacaca Courts</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-6">"Community-based justice system processed 1.2M cases post-genocide, achieving 92% satisfaction rates and national reconciliation."</p>
-                    <div class="flex gap-4 text-sm">
-                        <span class="px-3 py-1 rounded-full bg-[#4C9F38]/20 text-[#4C9F38]">Restorative Justice</span>
-                        <span class="px-3 py-1 rounded-full bg-[#00689D]/20 text-[#00689D]">Community Healing</span>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card rounded-2xl p-8 border border-white/10">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-[#4C9F38] flex items-center justify-center font-bold">SG</div>
-                        <div>
-                            <div class="font-bold">Singapore</div>
-                            <div class="text-sm text-gray-500">Anti-Corruption</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-6">"Consistently ranked among the least corrupt nations. CPIB's digital reporting system processes complaints within 24 hours."</p>
-                    <div class="flex gap-4 text-sm">
-                        <span class="px-3 py-1 rounded-full bg-[#4C9F38]/20 text-[#4C9F38]">Zero Tolerance</span>
-                        <span class="px-3 py-1 rounded-full bg-[#00689D]/20 text-[#00689D]">Digital Whistleblowing</span>
-                    </div>
-                </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <a href="#" class="block p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-juba-gold transition-all group">
+                    <i class="fab fa-whatsapp text-3xl text-green-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold mb-1">WhatsApp Group</h3>
+                    <p class="text-xs text-gray-500">Daily market updates</p>
+                </a>
+                <a href="#" class="block p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-juba-gold transition-all group">
+                    <i class="fas fa-hand-holding-usd text-3xl text-blue-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold mb-1">Savings Groups</h3>
+                    <p class="text-xs text-gray-500">VSLA methodology</p>
+                </a>
+                <a href="#" class="block p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-juba-gold transition-all group">
+                    <i class="fas fa-chalkboard-teacher text-3xl text-purple-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold mb-1">Training Hub</h3>
+                    <p class="text-xs text-gray-500">Free business skills</p>
+                </a>
+                <a href="#" class="block p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-juba-gold transition-all group">
+                    <i class="fas fa-shield-alt text-3xl text-red-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold mb-1">Legal Aid</h3>
+                    <p class="text-xs text-gray-500">Tax & registration help</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section id="action" class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#00689D]/10 to-[#4C9F38]/10"></div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="display-font text-5xl md:text-6xl font-bold mb-8">Be the Change</h2>
-            <p class="text-xl text-gray-300 mb-12">Join the global movement for peace, justice, and strong institutions. Every action counts.</p>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="glass-card p-6 rounded-xl text-center hover:bg-white/10 transition-all cursor-pointer group">
-                    <i data-lucide="vote" class="w-8 h-8 mx-auto mb-4 text-[#00689D] group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold mb-2">Participate</h4>
-                    <p class="text-sm text-gray-400">Engage in local governance and community decision-making</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl text-center hover:bg-white/10 transition-all cursor-pointer group">
-                    <i data-lucide="megaphone" class="w-8 h-8 mx-auto mb-4 text-[#4C9F38] group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold mb-2">Advocate</h4>
-                    <p class="text-sm text-gray-400">Speak up for human rights and institutional transparency</p>
-                </div>
-                <div class="glass-card p-6 rounded-xl text-center hover:bg-white/10 transition-all cursor-pointer group">
-                    <i data-lucide="heart-handshake" class="w-8 h-8 mx-auto mb-4 text-[#00689D] group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold mb-2">Support</h4>
-                    <p class="text-sm text-gray-400">Donate to legal aid and peace-building organizations</p>
-                </div>
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-900/30">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold mb-4">About <span class="text-juba-gold">Juba Business Hub</span></h2>
+                <p class="text-gray-400 max-w-3xl mx-auto">We are dedicated to empowering small businesses in South Sudan by providing practical solutions to the unique challenges faced in Juba's volatile market environment.</p>
             </div>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="px-8 py-4 bg-gradient-to-r from-[#00689D] to-[#4C9F38] rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-[#00689D]/30 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
-                    <i data-lucide="download" class="w-5 h-5"></i>
-                    Download Action Toolkit
-                </button>
-                <button class="px-8 py-4 border-2 border-white/30 rounded-full font-bold text-lg hover:bg-white/10 transition-all">
-                    Find Local Organizations
-                </button>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-6">Our Mission</h3>
+                    <p class="text-gray-400 mb-6">To create a supportive ecosystem where Juba's entrepreneurs can thrive despite economic instability, infrastructure challenges, and regulatory complexities.</p>
+                    
+                    <h3 class="font-display text-2xl font-bold mb-6">What We Do</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-3 mt-1"></i> Provide daily market intelligence and pricing tools</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-3 mt-1"></i> Offer training in business skills and financial literacy</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-3 mt-1"></i> Connect entrepreneurs with alternative financing options</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-3 mt-1"></i> Advocate for better business policies and regulations</li>
+                        <li class="flex items-start"><i class="fas fa-check text-juba-gold mr-3 mt-1"></i> Build community networks for mutual support</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700">
+                    <h3 class="font-display text-xl font-bold mb-6 text-center">Our Impact</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-juba-gold">500+</div>
+                            <div class="text-sm text-gray-500">Businesses Supported</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-juba-gold">200+</div>
+                            <div class="text-sm text-gray-500">Training Sessions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-juba-gold">$50K+</div>
+                            <div class="text-sm text-gray-500">Alternative Financing</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-juba-gold">15</div>
+                            <div class="text-sm text-gray-500">Partner Organizations</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 bg-[#0a0a0a]">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded bg-gradient-to-br from-[#00689D] to-[#4C9F38] flex items-center justify-center text-sm font-bold">16</div>
-                <span class="font-semibold">SDG 16: Peace, Justice & Strong Institutions</span>
+    <footer class="bg-juba-dark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-seedling text-juba-gold text-xl"></i>
+                        <span class="font-display font-bold text-lg">Juba Business Hub</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">Empowering small businesses in Juba South Sudan with practical solutions and community support.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-juba-gold">Business Registration</a></li>
+                        <li><a href="#" class="hover:text-juba-gold">Tax Guidelines</a></li>
+                        <li><a href="#" class="hover:text-juba-gold">Market Prices</a></li>
+                        <li><a href="#" class="hover:text-juba-gold">Funding Opportunities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-juba-gold">Financial Literacy</a></li>
+                        <li><a href="#" class="hover:text-juba-gold">Digital Skills</a></li>
+                        <li><a href="#" class="hover:text-juba-gold">Supplier Directory</a></li>
+                        <li><a href="#" class="hover:text-juba-gold">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> info@jubabizhub.org</li>
+                        <li><i class="fas fa-phone mr-2"></i> +211 980705265</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Juba, Central Equatoria</li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex gap-6 text-gray-500 text-sm">
-                <a href="#" class="hover:text-white transition-colors">World Justice Project</a>
-                <a href="#" class="hover:text-white transition-colors">Transparency International</a>
-            </div>
-            <div class="text-gray-600 text-sm">
-                © 2026 SDG 16 Initiative
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-600">
+                <p>&copy; 2026 Juba Business Hub. Built for the resilient entrepreneurs of South Sudan.</p>
             </div>
         </div>
     </footer>
 <script src="script.js"></script>
+
+<!-- Login Modal -->
+<div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 max-w-md w-full mx-4">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="font-display text-xl font-bold">Training Access Login</h3>
+            <button onclick="closeLoginModal()" class="text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <form>
+            <div class="mb-6">
+                <label class="block text-sm font-medium mb-3">Select Role</label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="role" value="admin" class="mr-3" required>
+                        <span>Admin</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="role" value="trainers" class="mr-3">
+                        <span>Trainers</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="role" value="trainee" class="mr-3">
+                        <span>Trainee</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label for="login-password" class="block text-sm font-medium mb-2">Password</label>
+                <input type="password" id="login-password" class="w-full bg-gray-900 border border-gray-700 rounded px-3 py-2 text-sm" placeholder="Enter password" required>
+            </div>
+            
+            <button type="button" onclick="login()" class="w-full bg-juba-gold text-juba-dark font-bold py-2 rounded hover:bg-yellow-400 transition-colors">
+                Login
+            </button>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
